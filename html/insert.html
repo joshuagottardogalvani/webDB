@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>XFactor</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            margin:15px;
+        }
+        .form-group {
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container-fluid">
+   <form method="post" action="/jsp/insert.jsp">
+   <div class="form-group">
+      <label for="nome">Nome</label>
+    <input class="form-control" type="text" id="nome" name="nome" required>
+    </div>
+   <div class="form-group">
+      <label for="cognome">Cognome</label>
+    <input class="form-control" type="text" id="cognome" name="cognome"required>
+    </div>
+   <div class="form-group">
+      <label for="luogo-di-nascita">Luogo di nascita</label>
+    <input class="form-control" type="text" id="luogo-di-nascita" name="luogo-di-nascita">
+    </div>
+   <div class="form-group">
+      <label for="data-di-nascita">Data di nascita</label>
+    <input class="form-control" type="date" id="data-di-nascita" name="data-di-nascita">
+    </div>
+   <div class="form-group">
+      <label for="soprannome">Soprannome</label>
+    <input class="form-control" type="text" id="soprannome" name="soprannome">
+    </div>
+    <div class="form-group">
+      <label for="nazione">Nazione di nascita:</label>
+    <input class="form-control" type="text" id="nazione" name="nazione">
+    </div>
+    <div class="form-group">
+      <label for="bio">Biografia:</label>
+      <textarea class="form-control" rows="5" id="bio" name="bio"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="prima-edizione">Prima edizione</label>
+      <select class="form-control" name="prima-edizione" id="prima-edizione">
+        <option value="1">1° (2008)</option>
+        <option value="2">2° (2009)</option>
+        <option value="3">3° (2009)</option>
+        <option value="4">4° (2010)</option>
+        <option value="5">5° (2011)</option>
+        <option value="6">6° (2012)</option>
+        <option value="7">7° (2013)</option>
+        <option value="8">8° (2014)</option>
+        <option value="9">9° (2015)</option>
+        <option value="10">10° (2016)</option>
+        <option value="11">11° (2017)</option>
+        <option value="12">12° (2018)</option>
+      </select>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Inserisci</button>
+    
+   </form>
+</div>
+</body>
+</html>

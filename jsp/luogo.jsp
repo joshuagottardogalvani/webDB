@@ -5,8 +5,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Elenco giudici XFactor</title>
+        <title>XFactor</title>
         <meta charset="UTF-8">
+        <style>
+            body {
+               margin:15px;
+            }
+        </style>        
     </head>
     <body>
      <% 
@@ -21,19 +26,18 @@
       <h1>Elenco dei giudici di <%= request.getParameter("luogo") %></h1>
         <% 
             
-            String connectionUrl = "jdbc:sqlserver://213.140.22.237\\SQLEXPRESS:1433;databaseName=XFactor;user=gottardo.joshua;password=xxx123#";
-
+            String connURL = "jdbc:sqlserver://213.140.22.237\\SQLEXPRESS:1433;databaseName=gottardo.joshua;user=gottardo.joshua;password=xxx123#";
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-
-            Connection connection = DriverManager.getConnection(connectionUrl);
+            Connection connection = DriverManager.getConnection(connURL);
             
             String luogo = request.getParameter("luogo");
 
-			String sql1 = "SELECT * FROM Giudice where LuogoDiNascita = ?";
+			String sql1 = "SELECT * FROM XFGiudice where LuogoDiNascita = ?";
 			PreparedStatement stmt1 = connection.prepareStatement(sql1);
             stmt1.setString(1, luogo);
 			ResultSet rs = stmt1.executeQuery();
 			
+			out.println("<div class=\"container-fluid\">");
 			out.print("<table>");
 			
 			out.print("<tr><th align=left>Cognome</th><th align=left>Nome</th></tr>");
@@ -48,11 +52,10 @@
 	        }
 	        
 	        out.print("</table>");
+	        out.println("</div>");
 	        
 	        rs.close();
-	        
 	        connection.close();
-        
         %>
     </body>
 </html>

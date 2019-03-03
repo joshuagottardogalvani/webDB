@@ -3,11 +3,27 @@
 <head>
     <title>Luogo Giudici</title>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style>
+        body {
+           margin:15px;
+        }
+        .form-group {
+            width: 500px;
+        }
+    </style>
 </head>
 <body>
+<div class="container-fluid">
    <form method="post" action="/jsp/luogo.jsp">
-    <input type="text" name="luogo" />
-    <input type="submit" value="Mostra Giudici"/>
+    <div class="form-group">
+      <label for="Luogo">Città</label>
+      <input type="text" class="form-control" id="luogo" name="luogo" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Cerca</button>
    </form>
+</div>
 </body>
 </html>
